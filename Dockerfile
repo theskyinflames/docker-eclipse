@@ -1,10 +1,8 @@
 FROM ubuntu:14.04
-MAINTAINER Fabio Rehm "fgrehm@gmail.com"
-# Forked from Fabio Rehm "fgrehm@gmail.com" https://github.com/fgrehm/docker-eclipse repository
-
+MAINTAINER Jaume Arús "jaumearus@gmail.com"
 
 RUN sed 's/main$/main universe/' -i /etc/apt/sources.list && \
-    apt-get update && apt-get install -y software-properties-common && \
+    apt-get update && apt-get install -y software-properties-common  curl && \
     add-apt-repository ppa:webupd8team/java -y && \
     apt-get update && \
     echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && \
@@ -18,10 +16,11 @@ RUN sed 's/main$/main universe/' -i /etc/apt/sources.list && \
 RUN apt-get update && apt-get install -y libgtk2.0-0 libcanberra-gtk-module
 
 # Install eclipse Neon
-COPY eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz /tmp/
-RUN ls -la /tmp/ && echo 'Installing eclipse' && \
-    tar -xzvf /tmp/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz -C /opt && \
-    rm /tmp/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz
+#COPY eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz /tmp/
+RUN cd /tmp/ && curl http://mirror.ibcp.fr/pub/eclipse//technology/epp/downloads/release/neon/1a/eclipse-jee-neon-1a-linux-gtk-x86_64.tar.gz -o ./eclipse.tar.gz \
+  ls -la /tmp/ && echo 'Installing eclipse' && \
+    tar -xzvf /tmp/eclipse.tar.gz -C /opt && \
+    rm /tmp/eclipse.tar.gz
 
 ADD run /usr/local/bin/eclipse
 
