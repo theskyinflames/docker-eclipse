@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 MAINTAINER Theskyinflames "theskyinflames@gmail.com"
 
 RUN sed 's/main$/main universe/' -i /etc/apt/sources.list && \
@@ -13,7 +13,7 @@ RUN sed 's/main$/main universe/' -i /etc/apt/sources.list && \
 
 # Install libgtk as a separate step so that we can share the layer above with
 # the netbeans image
-RUN apt-get update && apt-get install -y libgtk2.0-0 libcanberra-gtk-module
+RUN apt-get update && apt-get install -y libgtk2.0-0 libcanberra-gtk-module sudo
 
 # Install eclipse Neon
 ADD install_eclipse.sh /
