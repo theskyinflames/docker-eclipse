@@ -5,8 +5,13 @@ services:
     privileged: true
     environment:
       - DISPLAY=$DISPLAY
+      - TERM=xterm
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - ${ECLIPSE_PLUGINS_DIRECTORY}/.eclipse-docker:/home/developer
       - ${ECLIPSE_WORKSPACE}:/workspace
-
+    ports:
+      - 8080:8080
+      - 8085:8085
+      - 8009:8009
+      - 443:443
