@@ -4,7 +4,9 @@ services:
     image: theskyinflames/eclipse
     privileged: true
     environment:
-      - DISPLAY=${DISPLAY}
+      - DISPLAY=$DISPLAY
     volumes:
-     - /tmp/.X11-unix:/tmp/.X11-unix
-     - /workspace:/workspace
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ${ECLIPSE_PLUGINS_DIRECTORY}/.eclipse-docker:/home/developer
+      - ${ECLIPSE_WORKSPACE}:/workspace
+
