@@ -1,6 +1,6 @@
 # docker-eclipse
 
-Eclipse Neon in a Docker container
+Eclipse Neon in a Docker container on a X11 based graphic systems.
 
 This project is a fork of, and therefore, it's based on, Fabio Rehm [eclipse-docker](https://github.com/fgrehm/docker-eclipse) project
 
@@ -8,6 +8,7 @@ This project is a fork of, and therefore, it's based on, Fabio Rehm [eclipse-doc
 
 * Docker 1.2+ (should work fine on 1.0+ but I haven't tried)
 * An X11 socket
+
 ## Build the docker image
 ```sh
   ./build.sh
