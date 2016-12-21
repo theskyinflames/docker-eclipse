@@ -14,7 +14,7 @@ This project is a fork of, and therefore, it's based on, Fabio Rehm [eclipse-doc
   ./build.sh
 ```
 ## Environment variables
-Before startint the eclipse in a docker container, first is it necessary to set the environment variables:
+Before starting the eclipse in a docker container, first is it necessary to set the environment variables:
 
 * *ECLIPSE_WORKSPACE*: Eclipse workspace path in the host.
 * *ECLIPSE_PLUGINS_DIRECTORY*: Directory to save the eclipse plugins and configuration. It's the *~/.eclipse* directory equivalent in the host.
