@@ -10,6 +10,7 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - ${ECLIPSE_PLUGINS_DIRECTORY}:/home/developer
       - ${ECLIPSE_WORKSPACE}:/workspace
+      - /home/oracle:/home/oracle
     ports:
       - 8080:8080
       - 8085:8085

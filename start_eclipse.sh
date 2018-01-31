@@ -8,7 +8,7 @@ echo "Eclipse workspace directory: $ECLIPSE_WORKSPACE"
 
 if [ ! -d "$ECLIPSE_WORKSPACE" ]; then
   mkdir -p $ECLIPSE_WORKSPACE
-  chmod -R $ECLIPSE_WORKSPACE
+  chmod -R 777 $ECLIPSE_WORKSPACE
 fi
 
 if [ ! -d "$ECLIPSE_PLUGINS_DIRECTORY" ]; then
