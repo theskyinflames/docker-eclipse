@@ -33,4 +33,5 @@ RUN chmod +x /usr/local/bin/eclipse && \
 USER developer
 ENV HOME /home/developer
 WORKDIR /home/developer
+ENV TERM=xterm
 CMD /usr/local/bin/eclipse

@@ -1,6 +1,6 @@
 # docker-eclipse
 
-Eclipse Neon in a Docker container on a X11 based graphic systems.
+Eclipse Neon in a Docker container for X11 based graphic systems.
 
 This project is a fork of, and therefore, it's based on, Fabio Rehm [eclipse-docker](https://github.com/fgrehm/docker-eclipse) project
 
@@ -14,15 +14,17 @@ This project is a fork of, and therefore, it's based on, Fabio Rehm [eclipse-doc
   ./build.sh
 ```
 ## Environment variables
-Before startint the eclipse in a docker container, first is it necessary to set the environment variables:
+Before starting the eclipse in a docker container, first is it necessary to set the environment variables:
 
-* *ECLIPSE_WORKSPACE*: Eclipse workspace path.
-* *ECLIPSE_PLUGINS_DIRECTORY*: Directory to save the eclipse plugins and configuration. It's the *~/.eclipse* directory equivalent
+* *ECLIPSE_WORKSPACE*: Eclipse workspace path in the host.
+* *ECLIPSE_PLUGINS_DIRECTORY*: Directory to save the eclipse plugins and configuration. It's the *~/.eclipse* directory equivalent in the host.
 
 ## Starting the dockerized Eclipse
 ```sh
   ./start_eclipse.sh
 ```
+## RHEL, CentOS and Fedora Core users
+With this distributions it's necessary to launch the container in priveleged mode, adding *privileged: true* to the docker-compose.yml file
 
 ## Help! I started the container but I don't see the Eclipse screen
 You might have an issue with the X11 socket permissions since the default user
